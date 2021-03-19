@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 import DoughnutComponent from "../../containers/DoughnutComponent"
-import { getDoughnutData } from '../../services/api.service';
+import { useDispatch, useSelector } from 'react-redux';
 import './styles.scss';
+import { AppState } from "../../store/states/app.state";
+import { doughnutDataAction } from "../../store/actions/dashboard.actions";
+import { getDoughnutData } from "../../library/charts.data";
 
 const HomePage = () => {
-    const [doughnutData, setDoughnutData] = useState(null);
-    
+    const doughnutData = useSelector((state: AppState) => state.dashboard.doughnut.data);
+    const formattedDoughnutData = useMemo(() => getDoughnutData(doughnutData), [doughnutData]);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        getDoughnutData().then(data => setDoughnutData(data));
-    }, [getDoughnutData])
+        dispatch(doughnutDataAction());
+    }, []);
 
     return (
         <div className="page-wrapper">
@@ -25,7 +30,7 @@ const HomePage = () => {
                             </nav>
                         </div>
                     </div>
-                </div>
+           +     </div>
             </div>
             <div className="container-fluid">
                 <div className="row">
@@ -48,7 +53,7 @@ const HomePage = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-12">
-                                        <DoughnutComponent data={doughnutData} />
+                                        <DoughnutComponent data={formattedDoughnutData} />
                                     </div>
                                 </div>
                             </div>

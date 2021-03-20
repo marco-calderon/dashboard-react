@@ -1,4 +1,5 @@
 import { Feed } from "../models/feed.model";
+import { Order } from "../models/order.model";
 
 export const fetchLineData = () => {
     return new Promise((resolve, reject) => {
@@ -38,5 +39,27 @@ export const fetchFeed = (): Promise<Array<Feed>> => {
             { id: 5, description: 'Location has been updated.', date: new Date(), priority: 'High', icon: 'mapMarker' },
             { id: 6, description: 'The project is on fire.', date: new Date(), priority: 'Low', icon: 'project' },
         ]);      
+    });
+}
+
+export const fetchOrders = (): Promise<{ headers: { key: string, label: string}[], data: Order[] }> => {
+    return new Promise((resolve, reject) => {
+        resolve({
+            headers: [
+                { key: 'title', label: 'Title' },
+                { key: 'items', label: 'Item' },
+                { key: 'total', label: 'Total' },
+                { key: 'date', label: 'Date' }
+            ],
+            data: [
+                { id: 1, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 2, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 3, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 4, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 5, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 6, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 7, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+            ]
+        });
     });
 }

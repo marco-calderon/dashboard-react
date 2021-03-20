@@ -1,7 +1,8 @@
 import {
     REQUEST_DOUGHNUT_DATA, REQUEST_DOUGHNUT_DATA_FAIL, REQUEST_DOUGHNUT_DATA_SUCCESS,
     REQUEST_LINE_DATA, REQUEST_LINE_DATA_FAIL, REQUEST_LINE_DATA_SUCCESS,
-    REQUEST_FEED, REQUEST_FEED_FAIL, REQUEST_FEED_SUCCESS } from "../actions/dashboard.actions";
+    REQUEST_FEED, REQUEST_FEED_FAIL, REQUEST_FEED_SUCCESS,
+    REQUEST_ORDERS, REQUEST_ORDERS_FAIL, REQUEST_ORDERS_SUCCESS } from "../actions/dashboard.actions";
 import { initialState } from "../states/dashboard.state";
 
 const dashboardReducer = (state = initialState, action: any) => {
@@ -26,6 +27,13 @@ const dashboardReducer = (state = initialState, action: any) => {
             return { ...state, feed: { isFetching: false, data: action.payload }};
         case REQUEST_FEED_FAIL:
             return { ...state, feed: { isFetching: false }};
+
+        case REQUEST_ORDERS:
+            return { ...state, orders: action.payload };
+        case REQUEST_ORDERS_SUCCESS:
+            return { ...state, orders: { isFetching: false, data: action.payload }};
+        case REQUEST_ORDERS_FAIL:
+            return { ...state, orders: { isFetching: false }};
         default:
             return state;
     }

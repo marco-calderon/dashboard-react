@@ -1,4 +1,4 @@
-import { fetchDoughnutData, fetchFeed, fetchLineData } from "../../services/api.service";
+import { fetchDoughnutData, fetchFeed, fetchLineData, fetchOrders } from "../../services/api.service";
 
 export const REQUEST_DOUGHNUT_DATA = 'REQUEST_DOUGHNUT_DATA';
 export const REQUEST_DOUGHNUT_DATA_SUCCESS = 'REQUEST_DOUGHNUT_DATA_SUCCESS';
@@ -11,6 +11,10 @@ export const REQUEST_LINE_DATA_FAIL = 'REQUEST_LINE_DATA_FAIL';
 export const REQUEST_FEED = 'REQUEST_FEED';
 export const REQUEST_FEED_SUCCESS = 'REQUEST_FEED_SUCCESS';
 export const REQUEST_FEED_FAIL = 'REQUEST_FEED_FAIL';
+
+export const REQUEST_ORDERS = 'REQUEST_ORDERS';
+export const REQUEST_ORDERS_SUCCESS = 'REQUEST_ORDERS_SUCCESS';
+export const REQUEST_ORDERS_FAIL = 'REQUEST_ORDERS_FAIL';
 
 const requestDoughnutData = () => ({
     type: REQUEST_DOUGHNUT_DATA,
@@ -60,6 +64,23 @@ const requestFeedSuccess = (payload: any) => ({
 
 const requestFeedFail = (payload: any) => ({
     type: REQUEST_FEED_FAIL,
+    payload
+});
+
+const requestOrders = () => ({
+    type: REQUEST_ORDERS,
+    payload: {
+        isFetching: true
+    }
+});
+
+const requestOrdersSuccess = (payload: any) => ({
+    type: REQUEST_ORDERS_SUCCESS,
+    payload
+});
+
+const requestOrdersFail = (payload: any) => ({
+    type: REQUEST_ORDERS_FAIL,
     payload
 });
 
@@ -116,6 +137,25 @@ export const feedAction = () => {
             dispatch(requestFeedSuccess(data));
         }).catch(err => {
             dispatch(requestFeedFail(err));
+        });
+    }
+}
+
+export const ordersAction = () => {
+    return (dispatch: any, getState: any) => {
+        dispatch(requestOrders());
+
+        // Returns the state if data is retrieved.
+        const state = getState().dashboard.orders;
+        if (state && state.data) {
+            return () => dispatch(requestOrdersSuccess(state.data));
+        }
+
+        // Fetchs data if not.
+        return fetchOrders().then(data => {
+            dispatch(requestOrdersSuccess(data));
+        }).catch(err => {
+            dispatch(requestOrdersFail(err));
         });
     }
 }

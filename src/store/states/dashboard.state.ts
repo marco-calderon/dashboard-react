@@ -1,4 +1,5 @@
 import { Feed } from "../../models/feed.model";
+import { Order } from "../../models/order.model";
 
 export const initialState = {
     doughnut: {
@@ -10,6 +11,10 @@ export const initialState = {
         data: []
     },
     feed: {
+        isFetching: false,
+        data: []
+    },
+    orders: {
         isFetching: false,
         data: []
     }
@@ -26,6 +31,10 @@ export interface DashboardState {
     };
     feed: {
         isFetching: boolean,
-        data: Array<Feed>
+        data: Feed[]
+    },
+    orders: {
+        isFetching: boolean,
+        data: { headers: any, data: Order[] }
     }
 }

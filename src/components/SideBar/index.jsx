@@ -1,5 +1,5 @@
 import Icon from '@mdi/react';
-import { mdiAccount, mdiLogin, mdiMapMarker, mdiViewDashboard } from '@mdi/js';
+import { mdiAccount, mdiCog, mdiLogin, mdiMapMarker, mdiViewDashboard } from '@mdi/js';
 import './style.scss';
 
 const SideBar = () => {
@@ -42,20 +42,14 @@ const SideBar = () => {
                     </li>
                     <li className="sidebar-item my-4">
                         <span className="hide-menu d-flex align-items-center">
-                            <Icon path={mdiAccount} size={1} className="ml-3 mr-3" />
-                            Profile
-                        </span>
-                    </li>
-                    <li className="sidebar-item my-4">
-                        <span className="hide-menu d-flex align-items-center">
                             <Icon path={mdiMapMarker} size={1} className="ml-3 mr-3" />
                             Locate
                         </span>
                     </li>
                     <li className="sidebar-item my-4">
                         <span className="hide-menu d-flex align-items-center">
-                            <Icon path={mdiLogin} size={1} className="ml-3 mr-3" />
-                            Login
+                            <Icon path={mdiCog} size={1} className="ml-3 mr-3" />
+                            Settings
                         </span>
                     </li>
                 </ul>

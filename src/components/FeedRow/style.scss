@@ -1,0 +1,16 @@
+.feed {
+    &-item {
+        display: flex;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    &-icon {
+        margin-right: 1em;
+    }
+
+    &-description-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

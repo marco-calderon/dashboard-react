@@ -6,7 +6,7 @@ const DoughnutComponent = ({ data }) => {
       data={data}
       width={500}
       height={500}
-      options={{ maintainAspectRatio: false }}
+      options={{ maintainAspectRatio: false, legend: { display: false } }}
     />
   );
 }

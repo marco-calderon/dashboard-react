@@ -1,21 +1,19 @@
-import { fetchDoughnutData, fetchLineData } from "../../services/api.service";
+import { fetchDoughnutData, fetchFeed, fetchLineData } from "../../services/api.service";
 
 export const REQUEST_DOUGHNUT_DATA = 'REQUEST_DOUGHNUT_DATA';
 export const REQUEST_DOUGHNUT_DATA_SUCCESS = 'REQUEST_DOUGHNUT_DATA_SUCCESS';
 export const REQUEST_DOUGHNUT_DATA_FAIL = 'REQUEST_DOUGHNUT_DATA_FAIL';
+
 export const REQUEST_LINE_DATA = 'REQUEST_LINE_DATA';
 export const REQUEST_LINE_DATA_SUCCESS = 'REQUEST_LINE_DATA_SUCCESS';
 export const REQUEST_LINE_DATA_FAIL = 'REQUEST_LINE_DATA_FAIL';
 
+export const REQUEST_FEED = 'REQUEST_FEED';
+export const REQUEST_FEED_SUCCESS = 'REQUEST_FEED_SUCCESS';
+export const REQUEST_FEED_FAIL = 'REQUEST_FEED_FAIL';
+
 const requestDoughnutData = () => ({
     type: REQUEST_DOUGHNUT_DATA,
-    payload: {
-        isFetching: true
-    }
-});
-
-const requestLineData = () => ({
-    type: REQUEST_LINE_DATA,
     payload: {
         isFetching: true
     }
@@ -31,6 +29,13 @@ const requestDoughnutDataFail = (payload: any) => ({
     payload
 });
 
+const requestLineData = () => ({
+    type: REQUEST_LINE_DATA,
+    payload: {
+        isFetching: true
+    }
+});
+
 const requestLineDataSuccess = (payload: any) => ({
     type: REQUEST_LINE_DATA_SUCCESS,
     payload
@@ -38,6 +43,23 @@ const requestLineDataSuccess = (payload: any) => ({
 
 const requestLineDataFail = (payload: any) => ({
     type: REQUEST_LINE_DATA_FAIL,
+    payload
+});
+
+const requestFeed = () => ({
+    type: REQUEST_FEED,
+    payload: {
+        isFetching: true
+    }
+});
+
+const requestFeedSuccess = (payload: any) => ({
+    type: REQUEST_FEED_SUCCESS,
+    payload
+});
+
+const requestFeedFail = (payload: any) => ({
+    type: REQUEST_FEED_FAIL,
     payload
 });
 
@@ -65,7 +87,7 @@ export const lineDataAction = () => {
         dispatch(requestLineData());
 
         // Returns the state if data is retrieved.
-        const state = getState().line.doughnut;
+        const state = getState().dashboard.line;
         if (state && state.data) {
             return () => dispatch(requestLineDataSuccess(state.data));
         }
@@ -75,6 +97,25 @@ export const lineDataAction = () => {
             dispatch(requestLineDataSuccess(data));
         }).catch(err => {
             dispatch(requestLineDataFail(err));
+        });
+    }
+}
+    
+export const feedAction = () => {
+    return (dispatch: any, getState: any) => {
+        dispatch(requestFeed());
+
+        // Returns the state if data is retrieved.
+        const state = getState().dashboard.feed;
+        if (state && state.data) {
+            return () => dispatch(requestFeedSuccess(state.data));
+        }
+
+        // Fetchs data if not.
+        return fetchFeed().then(data => {
+            dispatch(requestFeedSuccess(data));
+        }).catch(err => {
+            dispatch(requestFeedFail(err));
         });
     }
 }

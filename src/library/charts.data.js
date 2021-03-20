@@ -21,3 +21,21 @@ export const getDoughnutData = (data) => {
         }],
     };
 }
+
+export const getLineData = (data) => {
+    if (!data || data.length === 0) {
+        return {};
+    }
+    
+    const values = data.map((d, i) => ({ y: d.value, x: i }));
+
+    return {
+        datasets:[{
+            label: 'Tasks',
+            data: values,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+            ]
+        }],
+    };
+}

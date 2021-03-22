@@ -1,7 +1,7 @@
 import { Feed } from "../../models/feed.model";
 import * as timeago from 'timeago.js';
 import { capFirstLetter } from "../../library/functions";
-import { mdiBox, mdiCheck, mdiCube, mdiCubeOutline, mdiInbox, mdiMapMarker, mdiSetNone, mdiViewList } from "@mdi/js";
+import { mdiCheck, mdiCubeOutline, mdiInbox, mdiMapMarker, mdiSetNone, mdiViewList } from "@mdi/js";
 import Icon from "@mdi/react";
 import './style.scss';
 

@@ -10,7 +10,6 @@ import FeedComponent from "../../containers/FeedComponent";
 import TableComponent from "../../containers/TableComponent";
 import { Order } from "../../models/order.model";
 import * as timeago from 'timeago.js';
-import Forecast from "../../components/Forecast";
 
 const rowRender = (row: Order) => {
 	return (
@@ -41,7 +40,7 @@ const HomePage = () => {
 		dispatch(lineDataAction());
 		dispatch(feedAction());
 		dispatch(ordersAction());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className="page-wrapper">
@@ -52,8 +51,8 @@ const HomePage = () => {
 						<div className="d-flex align-items-center">
 							<nav aria-label="breadcrumb">
 								<ol className="breadcrumb">
-									<li className="breadcrumb-item"><a href="#">Home</a></li>
-									<li className="breadcrumb-item active" aria-current="page">Library</li>
+									<li className="breadcrumb-item">Home</li>
+									<li className="breadcrumb-item active" aria-current="page">Dashboard</li>
 								</ol>
 							</nav>
 						</div>

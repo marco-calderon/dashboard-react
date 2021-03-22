@@ -6,22 +6,22 @@ const NavBar = () => {
     <header className="topbar" data-navbarbg="skin5">
         <nav className="navbar top-navbar navbar-expand-md navbar-dark d-flex align-items-center">
             <div className="navbar-header" data-logobg="skin5">
-                <a className="navbar-brand" href="index.html">
+                <span className="navbar-brand">
                     <b className="logo-icon">
                         <h3>Dashboard</h3>
                     </b>
-                </a>
-                <a className="nav-toggler waves-effect waves-light d-flex d-md-none align-items-center justify-content-center mr-3" href="javascript:void(0)">
+                </span>
+                <span className="nav-toggler waves-effect waves-light d-flex d-md-none align-items-center justify-content-center mr-3">
                     <Icon path={mdiMenu} size={1} />
-                </a>
+                </span>
             </div>
             <div className="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                 <ul className="navbar-nav me-auto">
-                    <li className="nav-item search-box"> <a className="nav-link waves-effect waves-dark"
-                            href="javascript:void(0)"><i className="ti-search"></i></a>
+                    <li className="nav-item search-box"> <span className="nav-link waves-effect waves-dark"
+                            ><i className="ti-search"></i></span>
                         <form className="app-search position-absolute">
-                            <input type="text" className="form-control" placeholder="Search &amp; enter"/> <a
-                                className="srh-btn"><i className="ti-close"></i></a>
+                            <input type="text" className="form-control" placeholder="Search &amp; enter"/>
+                            <i className="ti-close"></i>
                         </form>
                     </li>
                 </ul>

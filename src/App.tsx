@@ -5,11 +5,12 @@ import HomePage from './pages/HomePage';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import { useMediaQuery } from 'beautiful-react-hooks';
 import BottomBar from './components/BottomBar';
+import MapPage from './pages/MapPage';
+import SettingsPage from './pages/SettingsPage';
 
 function App() {
   const isSmall = useMediaQuery('(max-width: 48rem)'); 
@@ -20,8 +21,14 @@ function App() {
         <NavBar />
         <SideBar />
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <HomePage />
+          </Route>
+          <Route path="/map">
+            <MapPage />
+          </Route>
+          <Route path="/settings">
+            <SettingsPage />
           </Route>
         </Switch>
       </div>

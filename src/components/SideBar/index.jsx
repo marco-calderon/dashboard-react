@@ -1,6 +1,7 @@
 import Icon from '@mdi/react';
 import { mdiAccount, mdiCog, mdiLogin, mdiMapMarker, mdiViewDashboard } from '@mdi/js';
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   return (
@@ -15,7 +16,7 @@ const SideBar = () => {
                                 <a href="#" className="" id="Userdd" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <h5 className="m-b-0 user-name font-medium">Admin</h5>
-                                    <span className="op-5 user-email">varun@gmail.com</span>
+                                    <span className="op-5 user-email">admin@gmail.com</span>
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end" aria-labelledby="Userdd">
                                     <a className="dropdown-item" href="javascript:void(0)"><i
@@ -35,22 +36,28 @@ const SideBar = () => {
                         </div>
                     </li>
                     <li className="sidebar-item my-4">
-                        <span className="hide-menu d-flex align-items-center">
-                            <Icon path={mdiViewDashboard} size={1} className="ml-3 mr-3" />
-                            Dashboard
-                        </span>
+                        <Link to="/">
+                            <span className="hide-menu d-flex align-items-center">
+                                <Icon path={mdiViewDashboard} size={1} className="ml-3 mr-3" />
+                                Dashboard
+                            </span>
+                        </Link>
                     </li>
                     <li className="sidebar-item my-4">
-                        <span className="hide-menu d-flex align-items-center">
-                            <Icon path={mdiMapMarker} size={1} className="ml-3 mr-3" />
-                            Locate
-                        </span>
+                        <Link to="/map">
+                            <span className="hide-menu d-flex align-items-center">
+                                <Icon path={mdiMapMarker} size={1} className="ml-3 mr-3" />
+                                Locate
+                            </span>
+                        </Link>
                     </li>
                     <li className="sidebar-item my-4">
-                        <span className="hide-menu d-flex align-items-center">
-                            <Icon path={mdiCog} size={1} className="ml-3 mr-3" />
-                            Settings
-                        </span>
+                        <Link to="/settings">
+                            <span className="hide-menu d-flex align-items-center">
+                                <Icon path={mdiCog} size={1} className="ml-3 mr-3" />
+                                Settings
+                            </span>
+                        </Link>
                     </li>
                 </ul>
             </nav>

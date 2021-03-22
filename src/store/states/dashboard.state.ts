@@ -16,7 +16,7 @@ export const initialState = {
     },
     orders: {
         isFetching: false,
-        data: []
+        data: null
     }
 };
 

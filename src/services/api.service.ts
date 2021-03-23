@@ -21,10 +21,10 @@ export const fetchLineData = () => {
 export const fetchDoughnutData = () => {
     return new Promise((resolve, reject) => {
         resolve([
-            { key: 'Completed', value: 10},
+            { key: 'Completed', value: 3},
             { key: 'In progress', value: 10},
-            { key: 'Backlog', value: 10},
-            { key: 'Under review', value: 10},
+            { key: 'Backlog', value: 16},
+            { key: 'Under review', value: 8},
         ]);     
     });
 }

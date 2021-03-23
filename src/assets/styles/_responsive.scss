@@ -1,3 +1,7 @@
+.page-wrapper {
+    margin-top: 64px;
+}
+
 @media (max-width: 575.98px) {
     .left-sidebar {
         display: none;
@@ -5,5 +9,6 @@
 
     .page-wrapper {
         margin-left: 0 !important;
+        margin-bottom: 64px;
     }
 }

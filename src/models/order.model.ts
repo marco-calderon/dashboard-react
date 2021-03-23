@@ -3,5 +3,5 @@ export interface Order {
     title: string;
     items: number;
     total: number;
-    date: Date;
+    date: number;
 }

@@ -5,7 +5,7 @@ const FeedComponent = (props: { data: Array<Feed>}) => {
   const { data } = props;
   return (
     <ul className="list-style-none feed-body m-0 p-b-20">
-      {data && data.map(d => (<FeedRow data={d} />))}
+      {data && data.map(d => (<FeedRow key={d.id} data={d} />))}
     </ul>
   );
 }

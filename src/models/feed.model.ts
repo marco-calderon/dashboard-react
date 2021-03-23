@@ -1,7 +1,7 @@
 export interface Feed {
     id: number;
     description: string;
-    date: any;
+    date: number;
     priority?: string;
     icon?: string;
 }

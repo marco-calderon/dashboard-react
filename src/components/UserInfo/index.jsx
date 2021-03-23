@@ -5,7 +5,7 @@ const UserInfo = () => {
         <div className="row">
           <div className="col-12">
             <div className="d-flex flex-column align-items-center justify-content-center">
-              <div class="user-pic"><span class="btn btn-circle d-flex btn-info text-white">EA</span></div>
+              <div className="user-pic"><span className="btn btn-circle d-flex btn-info text-white">EA</span></div>
               <h1>Admin</h1>
               <h4 className="text-muted">admin@gmail.com</h4>
             </div>
@@ -19,13 +19,13 @@ const UserInfo = () => {
         <div className="row">
           <div className="col-12">
             <form>
-              <div class="form-group">
-                <label for="emailAddress">Email address</label>
-                <input type="email" class="form-control" id="emailAddress" placeholder="Enter email" />
+              <div className="form-group">
+                <label htmlFor="emailAddress">Email address</label>
+                <input type="email" className="form-control" id="emailAddress" placeholder="Enter email" />
               </div>
-              <div class="form-group">
-                <label for="bio">Bio</label>
-                <textarea type="email" class="form-control" id="bio" placeholder="Enter your biography"></textarea>
+              <div className="form-group">
+                <label htmlFor="bio">Bio</label>
+                <textarea type="email" className="form-control" id="bio" placeholder="Enter your biography"></textarea>
               </div>
             </form>
           </div>

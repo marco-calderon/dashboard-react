@@ -8,7 +8,7 @@ const NavBar = () => {
             <div className="navbar-header" data-logobg="skin5">
                 <span className="navbar-brand">
                     <b className="logo-icon">
-                        <h3>Dashboard</h3>
+                        <h3 className="mb-0 ml-2">Dashboard</h3>
                     </b>
                 </span>
                 <span className="nav-toggler waves-effect waves-light d-flex d-md-none align-items-center justify-content-center mr-3">
@@ -17,8 +17,10 @@ const NavBar = () => {
             </div>
             <div className="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                 <ul className="navbar-nav me-auto">
-                    <li className="nav-item search-box"> <span className="nav-link waves-effect waves-dark"
-                            ><i className="ti-search"></i></span>
+                    <li className="nav-item search-box">
+                        <span className="nav-link waves-effect waves-dark">
+                            <i className="ti-search"></i>
+                        </span>
                         <form className="app-search position-absolute">
                             <input type="text" className="form-control" placeholder="Search &amp; enter"/>
                             <i className="ti-close"></i>

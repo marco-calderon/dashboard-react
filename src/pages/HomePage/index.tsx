@@ -13,7 +13,7 @@ import * as timeago from 'timeago.js';
 
 const rowRender = (row: Order) => {
 	return (
-		<tr>
+		<tr key={row.id}>
 			<td>{row.title}</td>
 			<td>
 				<label className="label label-info">{row.items}</label>

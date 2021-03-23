@@ -16,13 +16,12 @@ const SideBar = () => {
                     <ul id="sidebarnav">
                         <li>
                             <div className="user-profile d-flex no-block dropdown m-t-20">
-                                <div className="user-pic mr-3"><span class="btn btn-circle d-flex btn-info text-white">EA</span></div>
+                                <div className="user-pic mr-3"><span className="btn btn-circle d-flex btn-info text-white">EA</span></div>
                                 <div className="user-content hide-menu m-l-10">
-                                    <button className="" id="Userdd"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <h5 className="m-b-0 user-name font-medium">Admin</h5>
                                         <span className="op-5 user-email">admin@gmail.com</span>
-                                    </button>
+                                    </span>
                                     <div className="dropdown-menu dropdown-menu-end" aria-labelledby="Userdd">
                                         <button className="dropdown-item"><i
                                             className="ti-user m-r-5 m-l-5"></i> My Profile</button>

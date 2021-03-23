@@ -32,12 +32,12 @@ export const fetchDoughnutData = () => {
 export const fetchFeed = (): Promise<Array<Feed>> => {
     return new Promise((resolve, reject) => {
         resolve([
-            { id: 1, description: 'You have 4 pending task for today.', date: new Date(), priority: 'Medium', icon: 'task' },
-            { id: 2, description: 'A new project has been added.', date: new Date(), priority: 'High', icon: 'project' },
-            { id: 3, description: 'You have received a new order.', date: new Date(), priority: 'Medium', icon: 'order' },
-            { id: 4, description: 'Payments for last week have been processed.', date: new Date(), priority: 'Low', icon: 'money' },
-            { id: 5, description: 'Location has been updated.', date: new Date(), priority: 'High', icon: 'mapMarker' },
-            { id: 6, description: 'The project is on fire.', date: new Date(), priority: 'Low', icon: 'project' },
+            { id: 1, description: 'You have 4 pending task for today.', date: new Date().valueOf(), priority: 'Medium', icon: 'task' },
+            { id: 2, description: 'A new project has been added.', date: new Date().valueOf(), priority: 'High', icon: 'project' },
+            { id: 3, description: 'You have received a new order.', date: new Date().valueOf(), priority: 'Medium', icon: 'order' },
+            { id: 4, description: 'Payments for last week have been processed.', date: new Date().valueOf(), priority: 'Low', icon: 'money' },
+            { id: 5, description: 'Location has been updated.', date: new Date().valueOf(), priority: 'High', icon: 'mapMarker' },
+            { id: 6, description: 'The project is on fire.', date: new Date().valueOf(), priority: 'Low', icon: 'project' },
         ]);      
     });
 }
@@ -48,17 +48,17 @@ export const fetchOrders = (): Promise<{ headers: { key: string, label: string}[
             headers: [
                 { key: 'title', label: 'Title' },
                 { key: 'items', label: 'Item' },
+                { key: 'date', label: 'Date' },
                 { key: 'total', label: 'Total' },
-                { key: 'date', label: 'Date' }
             ],
             data: [
-                { id: 1, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 2, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 3, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 4, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 5, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 6, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
-                { id: 7, title: 'Order #9866362.', items: 5, total: 2376.5, date: new Date() },
+                { id: 1, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 2, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 3, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 4, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 5, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 6, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
+                { id: 7, title: 'Order #9866362', items: 5, total: 2376.5, date: new Date().valueOf() },
             ]
         });
     });

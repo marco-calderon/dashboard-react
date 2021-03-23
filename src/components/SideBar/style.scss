@@ -4,7 +4,8 @@
     border-radius: 15px;
     padding: 12px 6px;
     margin: 12px;
-    transition: background-color ease-in-out 0.3s;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    color: rgb(77, 77, 77);
 
     &:hover {
         background-color: rgb(231, 231, 231);

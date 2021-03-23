@@ -14,9 +14,13 @@
         flex: 1;
         align-items: center;
         justify-content: center;
-    }
 
-    .active {
-        color: rgb(5, 107, 223);
+        & a {
+            color: rgb(95, 95, 95);
+        }
+
+        &.active a {
+            color: rgb(5, 107, 223);
+        }
     }
 }

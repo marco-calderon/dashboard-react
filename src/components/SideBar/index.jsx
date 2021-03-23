@@ -22,20 +22,6 @@ const SideBar = () => {
                                         <h5 className="m-b-0 user-name font-medium">Admin</h5>
                                         <span className="op-5 user-email">admin@gmail.com</span>
                                     </span>
-                                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby="Userdd">
-                                        <button className="dropdown-item"><i
-                                            className="ti-user m-r-5 m-l-5"></i> My Profile</button>
-                                        <button className="dropdown-item"><i
-                                            className="ti-wallet m-r-5 m-l-5"></i> My Balance</button>
-                                        <button className="dropdown-item"><i
-                                            className="ti-email m-r-5 m-l-5"></i> Inbox</button>
-                                        <div className="dropdown-divider"></div>
-                                        <button className="dropdown-item"><i
-                                            className="ti-settings m-r-5 m-l-5"></i> Account Setting</button>
-                                        <div className="dropdown-divider"></div>
-                                        <button className="dropdown-item"><i
-                                            className="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>
-                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -43,24 +29,24 @@ const SideBar = () => {
                             <Link to="/" className={route.length === 0 ? 'active': ''}>
                                 <span className="hide-menu d-flex align-items-center">
                                     <Icon path={mdiViewDashboard} size={1} className="ml-3 mr-3" />
-                                Dashboard
-                            </span>
+                                    Dashboard
+                                </span>
                             </Link>
                         </li>
                         <li className="sidebar-item">
                             <Link to="/map" className={route.includes('map') ? 'active': ''}>
                                 <span className="hide-menu d-flex align-items-center">
-                                    <Icon path={mdiMapMarker} size={1} className="ml-3 mr-3" />
-                                Locate
-                            </span>
+                                        <Icon path={mdiMapMarker} size={1} className="ml-3 mr-3" />
+                                    Locate
+                                </span>
                             </Link>
                         </li>
                         <li className="sidebar-item">
                             <Link to="/settings" className={route.includes('settings') ? 'active': ''}>
                                 <span className="hide-menu d-flex align-items-center">
-                                    <Icon path={mdiCog} size={1} className="ml-3 mr-3" />
-                                Settings
-                            </span>
+                                        <Icon path={mdiCog} size={1} className="ml-3 mr-3" />
+                                    Settings
+                                </span>
                             </Link>
                         </li>
                     </ul>

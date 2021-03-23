@@ -1,6 +1,6 @@
 # [Dashboard React Application](https://dashboard-react-sage.vercel.app/)
 
-Dashboard application made in react with Redux store integration, TypeScript and custom styling. Also support for showing maps through Leaflet plugin.
+Dashboard application made in React with Redux store integration, TypeScript and custom styling. Also support for showing maps through Leaflet plugin.
 
 [Live demo here.](https://dashboard-react-sage.vercel.app/)
 
@@ -11,5 +11,3 @@ Dashboard application made in react with Redux store integration, TypeScript and
 ![Settings page](https://user-images.githubusercontent.com/47753684/112080961-1d428a80-8b40-11eb-9f98-023ed5b6e8ec.jpg)
 
 ![Mobile pages](https://user-images.githubusercontent.com/47753684/112080963-1ddb2100-8b40-11eb-8210-225ebf0e9f34.jpg)
-
-This application is made to demonstrate the usage of best practices for React applications.

@@ -1,1 +1,26 @@
-@import 'assets/styles/bottom-bar';
+.bottom-bar {
+    position: fixed;
+    height: 64px;
+    background-color: #fff;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &-button {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+
+        & a {
+            color: rgb(95, 95, 95);
+        }
+
+        &.active a {
+            color: rgb(5, 107, 223);
+        }
+    }
+}

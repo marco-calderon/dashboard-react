@@ -1,6 +1,8 @@
-# Dashboard React Application
+# [Dashboard React Application](https://dashboard-react-sage.vercel.app/)
 
-[Live demo.]()
+Dashboard application made in react with Redux store integration, TypeScript and custom styling. Also support for showing maps through Leaflet plugin.
+
+[Live demo here.](https://dashboard-react-sage.vercel.app/)
 
 ![Dashboard page](https://user-images.githubusercontent.com/47753684/112080956-1b78c700-8b40-11eb-8b0e-cc28aac75c66.jpg)
 
